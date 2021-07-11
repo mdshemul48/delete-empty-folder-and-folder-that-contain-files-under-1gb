@@ -11,7 +11,7 @@ def get_all_folder_dir(root_folder_path: str):
 
 
 # this will go through all the folder_path and get all those folders sub folder.
-def go_and_get_all_the_sub_folder(root_folder_path):
+def go_and_get_all_the_sub_folder(root_folder_path: list):
     sub_folders_array = []
 
     for folder_path in root_folder_path:
