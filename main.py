@@ -24,10 +24,15 @@ def go_and_get_all_the_sub_folder(root_folder_path: list):
 # if folder size is lower then 1gb then delete the folder. else none.
 def check_folder_size_and_delete_folder(movie_folder_path: str):
     for path, dirs, files in os.walk(movie_folder_path):
+        # removing folder if folder is empty.
+        if len(files) == 0:
+            print("deleting empty folder-------------------->", path)
+            shutil.rmtree(path)
+            return
 
         # this will print if movie folder has multiple files.
         if len(files) >= 2:
-            return print(movie_folder_path, "<------------------- check this.")
+            return print("multiple files -------------------> ", movie_folder_path)
 
         # getting file size
         file_path = os.path.join(path, files[0])
